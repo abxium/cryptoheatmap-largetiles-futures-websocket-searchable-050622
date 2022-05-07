@@ -301,7 +301,7 @@ body {
      
       font-family:FontAwesome,sans-serif;
       font-size:14px;
-      font-weight:600;
+      font-weight:500;
   }
 
    .dropdown2:hover {
@@ -309,9 +309,9 @@ body {
       // background-image: linear-gradient(to right, cyan,blue, purple, red, orange, yellow);
       //text-shadow: .3px .3px #000;
        // background-color: #ddd;
-       color: black;
+       color: white;
        transition-duration: 0.4s;
-       font-weight:600;
+       font-weight:500;
        border: 1px solid white;
 
 }
@@ -319,8 +319,8 @@ body {
    .dropdown2:focus {
       // background-image: linear-gradient(to right, cyan,blue, purple, red, orange, yellow);
        background-color: #ddd; // #212530;
-       color: black;
-       font-weight:600;
+       color: white;
+       font-weight:500;
        border: 1px solid white;
 
 }
@@ -686,8 +686,8 @@ input:checked + .slider:before {
 
 <div class="item">
 <div class="meta">
-<span class="meta__title"><div id="bid" style="color:red;font-size:15px;display:inline-block;"></div></span>
-<span class="meta__title"><div id="ask" style="color:lime;font-size:15px;display:inline-block;"></div></span>
+<span class="meta__title"><div id="bid" style="color:red;font-size:12px;display:inline-block;"></div></span>
+<span class="meta__title"><div id="ask" style="color:lime;font-size:12px;display:inline-block;"></div></span>
 <span class="meta__describe">bid -- ask (binance)</span>
 <div id="Bid" style="color:red;font-size:12px;display:inline-block;margin-right:10px;"></div><div id="Ask" style="color:lime;font-size:12px;display:inline-block;"></div>
 <!--<span class="sparkline sparkline--dot-md white">{35,15,30,50,20,35,10,35,20,50}</span>-->
@@ -696,7 +696,7 @@ input:checked + .slider:before {
 
 <div class="item">
 <div class="meta">
-<span class="meta__percent magenta"><div id="rangevol" style="display:inline-block;font-size:28px;font-weight:600;"></div></span>
+<span class="meta__percent magenta"><div id="rangevol" style="display:inline-block;font-size:25px;font-weight:600;"></div></span>
 <span class="meta__percent magenta">V&#963;</span>
 <span class="meta__describe">H-L Price Volatility</span>
 <span class="sparkline sparkline--dotline-thin magenta">{35,15,30,50,20,35,95,50,75,80,70,45,90,95}</span>
@@ -1068,15 +1068,15 @@ ws.addEventListener( 'message', e => {
   el.textContent = Number( c ).toFixed( 2 );
   symbol.textContent = s;
   open.textContent = Number( o ).toFixed( 2 );
-  high.textContent = Number( h ).toFixed(2);
-  low.textContent = Number( l ).toFixed(2)
-  vol.textContent = Number( v ).toFixed(1) + 'k';
-  usvol.textContent = '$'+ (Number(q)/1000000000).toFixed(3) + 'b';
+  high.textContent = "H " + Number( h ).toFixed(2);
+  low.textContent = "L " + Number( l ).toFixed(2)
+  vol.textContent = Number( v ).toFixed(0) + 'btc';
+  usvol.textContent = '$'+ (Number(q)/1000000000).toFixed(2) + 'b';
   close.textContent = '$' + Number(c).toFixed(2);
   change.textContent = Number(p);
   pct.textContent = Number(P).toFixed( 2 );
-  bid.textContent = 'Bid $' + Number(b).toFixed( 2 );
-  ask.textContent = 'Ask $' + Number(a).toFixed( 2);
+  bid.textContent = 'Bid ' + Number(b).toFixed( 2 );
+  ask.textContent = 'Ask ' + Number(a).toFixed( 2);
   Bid.textContent = 'x ' + Number(B);
   Ask.textContent = 'x ' + Number(A);
   bidask.textContent =Number(a)-Number(b);
